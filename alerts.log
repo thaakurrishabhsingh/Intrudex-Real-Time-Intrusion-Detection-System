@@ -1,0 +1,7 @@
+[2025-08-26 11:14:14.942478] [ALERT] SYN packet detected from 192.168.25.1!
+[2025-08-26 11:14:27.261041] [ALERT] SYN packet detected from 192.168.25.1!
+[2025-08-26 11:14:40.136161] [ALERT] SYN packet detected from 192.168.25.1!
+[2025-08-26 11:14:45.056950] [ALERT] SYN packet detected from 192.168.25.1!
+[2025-08-26 11:20:46.879596] [ALERT] Possible SYN flood/scan from 192.168.25.1! (5 SYNs in 5s)
+[2025-08-26 11:20:46.892307] [ALERT] Possible SYN flood/scan from 192.168.25.1! (5 SYNs in 5s)
+[2025-08-26 11:20:46.956791] [ALERT] Possible SYN flood/scan from 192.168.25.1! (5 SYNs in 5s)

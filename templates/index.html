@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>IDS Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script>
+        async function fetchData() {
+            const res = await fetch("/data");
+            const data = await res.json();
+
+            document.getElementById("total").innerText = data.total;
+            document.getElementById("syn").innerText = data.syn_flood;
+            document.getElementById("scan").innerText = data.port_scan;
+
+            let ips = "";
+            for (const [ip, count] of Object.entries(data.suspicious_ips)) {
+                ips += `<li>${ip} : ${count} alerts</li>`;
+            }
+            document.getElementById("ips").innerHTML = ips;
+        }
+
+        setInterval(fetchData, 2000);
+        window.onload = fetchData;
+    </script>
+</head>
+<body>
+    <h1>🚀 Intrusion Detection System Dashboard</h1>
+    <div class="card">
+        <p><b>Total Alerts:</b> <span id="total">0</span></p>
+        <p><b>SYN Flood Alerts:</b> <span id="syn">0</span></p>
+        <p><b>Port Scan Alerts:</b> <span id="scan">0</span></p>
+    </div>
+
+    <h2>⚠️ Suspicious IPs</h2>
+    <ul id="ips"></ul>
+</body>
+</html>
